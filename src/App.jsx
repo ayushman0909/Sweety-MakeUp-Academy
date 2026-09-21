@@ -7,7 +7,6 @@ import About from "./components/sections/About/About";
 import Credentials from "./components/sections/Credentials/Credentials";
 import Course from "./components/sections/Course/Course";
 import Experience from "./components/sections/Experience/Experience";
-import VideoShowcase from "./components/sections/VideoShowcase/VideoShowcase";
 import Gallery from "./components/sections/Gallery/Gallery";
 import Testimonials from "./components/sections/Testimonials/Testimonials";
 import FAQ from "./components/sections/FAQ/FAQ";
@@ -31,7 +30,7 @@ function App() {
 
         <Course />
         <Experience />
-        <VideoShowcase />
+       
         <Gallery />
         <Testimonials />
         <FAQ />
