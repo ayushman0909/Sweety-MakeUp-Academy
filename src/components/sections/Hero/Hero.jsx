@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowDown,
@@ -8,50 +7,11 @@ import {
 } from "lucide-react";
 
 import Button from "../../common/Button";
-import heroVideo from "../../../assets/videos/reel1.mp4";
+import hero1 from "../../../assets/images/hero1.png";
 
 function Hero() {
-  const heroRef = useRef(null);
-  const videoRef = useRef(null);
-
-  useEffect(() => {
-    const heroSection = heroRef.current;
-    const video = videoRef.current;
-
-    if (!heroSection || !video) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          // Hero visible:
-          // start video from beginning
-          video.currentTime = 0;
-
-          video.play().catch(() => {
-            // Browser may block autoplay in some cases.
-          });
-        } else {
-          // Hero no longer visible:
-          // pause and reset video
-          video.pause();
-          video.currentTime = 0;
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    observer.observe(heroSection);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <section
-      ref={heroRef}
       id="home"
       className="relative min-h-screen overflow-hidden bg-[#FFF9F6] pt-24"
     >
@@ -109,9 +69,11 @@ function Hero() {
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-96px)] max-w-7xl items-center px-6 py-12 sm:px-8 lg:px-10">
         <div className="grid w-full items-center gap-14 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
+
           {/* ================= LEFT ================= */}
 
           <div className="max-w-2xl">
+
             {/* Small badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -131,6 +93,7 @@ function Hero() {
 
             {/* Heading */}
             <div className="overflow-hidden">
+
               <motion.p
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -153,10 +116,12 @@ function Hero() {
                 className="mt-1 font-['Cormorant_Garamond'] text-5xl font-semibold leading-[0.95] text-[#4A1728] sm:text-6xl md:text-7xl lg:text-[5.5rem]"
               >
                 Starts
+
                 <span className="block italic text-[#7B1735]">
                   Here.
                 </span>
               </motion.h1>
+
             </div>
 
             {/* Description */}
@@ -204,7 +169,9 @@ function Hero() {
               }}
               className="mt-9 flex flex-wrap gap-x-6 gap-y-3"
             >
+
               <div className="flex items-center gap-2">
+
                 <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#7B1735]/10">
                   <Star
                     size={13}
@@ -215,11 +182,13 @@ function Hero() {
                 <span className="font-['DM_Sans'] text-xs font-medium text-[#5E454C]">
                   Lakmé Certified
                 </span>
+
               </div>
 
               <div className="h-6 w-px bg-[#7B1735]/10" />
 
               <div className="flex items-center gap-2">
+
                 <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#7B1735]/10">
                   <Sparkles
                     size={13}
@@ -230,13 +199,17 @@ function Hero() {
                 <span className="font-['DM_Sans'] text-xs font-medium text-[#5E454C]">
                   Certified Top Ranker
                 </span>
+
               </div>
+
             </motion.div>
+
           </div>
 
-          {/* ================= RIGHT VIDEO ================= */}
+          {/* ================= RIGHT IMAGE ================= */}
 
           <div className="relative mx-auto w-full max-w-[520px]">
+
             {/* Rotating decorative ring */}
             <motion.div
               animate={{ rotate: 360 }}
@@ -267,30 +240,28 @@ function Hero() {
               }}
               className="relative"
             >
-              {/* Video glow */}
+
+              {/* Image glow */}
               <div className="absolute -inset-5 rounded-[2rem] bg-[#7B1735]/10 blur-2xl" />
 
-              {/* Video */}
+              {/* Image */}
               <div className="relative overflow-hidden rounded-[2rem] border-8 border-white bg-white shadow-[0_30px_80px_rgba(74,23,40,0.18)]">
-                <motion.video
-                  ref={videoRef}
-                  src={heroVideo}
-                  autoPlay
-                 
-                  loop
-                  playsInline
-                  preload="auto"
+
+                <motion.img
+                  src={hero1}
+                  alt="Professional makeup and beauty"
                   className="h-[520px] w-full object-cover sm:h-[620px]"
-                  initial={{ scale: 1.08 }}
+                  initial={{ scale: 1.04 }}
                   animate={{ scale: 1 }}
                   transition={{
-                    duration: 1.5,
+                    duration: 1.2,
                     ease: "easeOut",
                   }}
                 />
 
-                {/* Video overlay */}
+                {/* Image overlay */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#3A1322]/35 via-transparent to-transparent" />
+
               </div>
 
               {/* ================= FLOATING BADGE 1 ================= */}
@@ -363,8 +334,10 @@ function Hero() {
               >
                 <Sparkles size={20} />
               </motion.div>
+
             </motion.div>
           </div>
+
         </div>
       </div>
 
@@ -386,6 +359,7 @@ function Hero() {
 
         <ArrowDown size={15} />
       </motion.a>
+
     </section>
   );
 }
