@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 import Button from "../../common/Button";
-import hero1 from "../../../assets/images/hero1.png";
+import hero1 from "../../../assets/images/hero1.webp";
 
 function Hero() {
   return (

@@ -1,7 +1,7 @@
-import bridal01 from "../assets/images/galleryimage1.jpeg";
-import bridal02 from "../assets/images/galleryimage2.jpeg";
-import bridal03 from "../assets/images/galleryimage3.jpeg";
-import makeup01 from "../assets/images/galleryimage4.jpeg";
+import bridal01 from "../assets/images/galleryimage1.webp";
+import bridal02 from "../assets/images/galleryimage2.webp";
+import bridal03 from "../assets/images/galleryimage3.webp";
+import makeup01 from "../assets/images/galleryimage4.webp";
 
 import makeupReel from "../assets/videos/reel1.mp4";
 import bridalReel from "../assets/videos/reel2.mp4";

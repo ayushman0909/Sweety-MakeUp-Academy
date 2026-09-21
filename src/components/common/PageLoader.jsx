@@ -6,41 +6,38 @@ function PageLoader() {
     <motion.div
       initial={{
         opacity: 1,
-        scale: 1,
       }}
       animate={{
         opacity: 0,
-        scale: 1.03,
+        pointerEvents: "none",
       }}
       transition={{
         opacity: {
-          duration: 1.2,
-          delay: 1.6,
-          ease: [0.76, 0, 0.24, 1],
-        },
-        scale: {
-          duration: 1.2,
-          delay: 1.6,
-          ease: [0.76, 0, 0.24, 1],
+          duration: 0.9,
+          delay: 1.8,
+          ease: [0.65, 0, 0.35, 1],
         },
       }}
       className="
-        pointer-events-none
         fixed
         inset-0
-        z-[100]
+        z-100
         flex
         items-center
         justify-center
         overflow-hidden
         bg-[#4A1728]
+        will-change-[opacity]
       "
     >
-      {/* Ambient Glow */}
+      {/* =================================
+          AMBIENT GLOW
+      ================================== */}
+
       <motion.div
         initial={{
           opacity: 0,
-          scale: 0.7,
+          scale: 0.85,
         }}
         animate={{
           opacity: 1,
@@ -48,37 +45,45 @@ function PageLoader() {
         }}
         transition={{
           duration: 1.2,
-          ease: "easeOut",
+          delay: 0.05,
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="
           pointer-events-none
           absolute
-          h-[300px]
-          w-[300px]
+          h-70
+          w-70
           rounded-full
           bg-[#C9A45C]/10
-          blur-[100px]
+          blur-[80px]
+          will-change-transform
         "
       />
 
-      {/* Main Content */}
+      {/* =================================
+          MAIN CONTENT
+      ================================== */}
+
       <div className="relative z-10 text-center">
 
-        {/* Sparkle Circle */}
+        {/* =================================
+            SPARKLE CIRCLE
+        ================================== */}
+
         <motion.div
           initial={{
             opacity: 0,
-            scale: 0.5,
-            rotate: -20,
+            scale: 0.75,
+            y: 8,
           }}
           animate={{
             opacity: 1,
             scale: 1,
-            rotate: 0,
+            y: 0,
           }}
           transition={{
-            duration: 0.9,
-            delay: 0.15,
+            duration: 0.75,
+            delay: 0.1,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
@@ -93,16 +98,16 @@ function PageLoader() {
             border-[#C9A45C]/40
             bg-[#4A1728]
             text-[#C9A45C]
-            shadow-[0_0_40px_rgba(201,164,92,0.12)]
+            shadow-[0_0_35px_rgba(201,164,92,0.12)]
           "
         >
           <motion.div
             animate={{
-              rotate: [0, 8, -8, 0],
-              scale: [1, 1.08, 1],
+              rotate: [0, 6, -6, 0],
+              scale: [1, 1.05, 1],
             }}
             transition={{
-              duration: 2.5,
+              duration: 2.8,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -111,21 +116,22 @@ function PageLoader() {
           </motion.div>
         </motion.div>
 
-        {/* Brand Name */}
+        {/* =================================
+            BRAND NAME
+        ================================== */}
+
         <motion.div
           initial={{
             opacity: 0,
-            y: 20,
-            filter: "blur(8px)",
+            y: 12,
           }}
           animate={{
             opacity: 1,
             y: 0,
-            filter: "blur(0px)",
           }}
           transition={{
-            duration: 0.9,
-            delay: 0.35,
+            duration: 0.75,
+            delay: 0.25,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="
@@ -138,21 +144,22 @@ function PageLoader() {
           Sweety
         </motion.div>
 
-        {/* Subtitle */}
+        {/* =================================
+            SUBTITLE
+        ================================== */}
+
         <motion.p
           initial={{
             opacity: 0,
-            y: 10,
-            letterSpacing: "0.1em",
+            y: 8,
           }}
           animate={{
             opacity: 1,
             y: 0,
-            letterSpacing: "0.3em",
           }}
           transition={{
-            duration: 0.8,
-            delay: 0.65,
+            duration: 0.7,
+            delay: 0.4,
             ease: "easeOut",
           }}
           className="
@@ -161,26 +168,44 @@ function PageLoader() {
             text-[9px]
             font-semibold
             uppercase
+            tracking-[0.3em]
             text-[#DCC9CE]
           "
         >
           Makeup Academy
         </motion.p>
 
-        {/* Loading Line */}
-        <div className="mx-auto mt-7 h-px w-32 overflow-hidden bg-white/10">
+        {/* =================================
+            LOADING LINE
+        ================================== */}
+
+        <div
+          className="
+            mx-auto
+            mt-7
+            h-px
+            w-32
+            overflow-hidden
+            bg-white/10
+          "
+        >
           <motion.div
-            initial={{ x: "-100%" }}
-            animate={{ x: "100%" }}
+            initial={{
+              x: "-100%",
+            }}
+            animate={{
+              x: "100%",
+            }}
             transition={{
-              duration: 1.4,
-              delay: 0.4,
-              ease: "easeInOut",
+              duration: 1.3,
+              delay: 0.25,
+              ease: [0.65, 0, 0.35, 1],
             }}
             className="
               h-full
               w-full
               bg-[#C9A45C]
+              will-change-transform
             "
           />
         </div>

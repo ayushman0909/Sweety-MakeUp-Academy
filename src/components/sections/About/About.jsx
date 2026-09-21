@@ -4,7 +4,7 @@ import { ArrowUpRight, Heart, Sparkles } from "lucide-react";
 import Reveal from "../../common/Reveal";
 import SectionHeading from "../../common/SectionHeading";
 import Button from "../../common/Button";
-import poster from "../../../assets/images/poster.png";
+import poster from "../../../assets/images/poster.webp";
 
 function About() {
   return (
