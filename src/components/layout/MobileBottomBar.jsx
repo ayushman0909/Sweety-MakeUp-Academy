@@ -9,7 +9,7 @@ function MobileBottomBar() {
 
         {/* Call */}
         <motion.a
-          href="tel:"
+          href="tel:9572808952"
           whileTap={{ scale: 0.96 }}
           className="flex flex-1 items-center justify-center gap-2 rounded-full border border-[#7B1735]/20 bg-white py-3 font-['DM_Sans'] text-xs font-semibold text-[#7B1735]"
         >
