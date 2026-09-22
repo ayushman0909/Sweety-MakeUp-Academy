@@ -13,6 +13,7 @@ import FAQ from "./components/sections/FAQ/FAQ";
 import Booking from "./components/sections/Booking/Booking";
 import PageLoader from "./components/common/PageLoader";
 import FloatingActions from "./components/common/FloatingActions";
+import Founder from "./components/sections/Founder/Founder";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Hero />
 
         <About />
+        <Founder />
 
         <Credentials />
 
